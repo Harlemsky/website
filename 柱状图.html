@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ECharts</title>
+    <!-- Include the ECharts file you just downloaded -->
+    <script src="echarts.js"></script>
+  </head>
+  <body>
+    <!-- Prepare a DOM with a defined width and height for ECharts -->
+    <div id="main" style="width: 800px;height:400px;"></div>
+    <script type="text/javascript">
+      // Initialize the echarts instance based on the prepared dom
+      var myChart = echarts.init(document.getElementById('main'));
+
+      // Specify the configuration items and data for the chart
+      var option = {
+        title: {
+          text: '统计出书个数'
+        },
+        tooltip: {},
+        legend: {
+          data: ['出版社出书个数']
+        },
+        xAxis: {
+          data: ['同济大学出版社', '清华大学出版社', '攀枝花学院出版社', '人民教育出版社', '四川大学出版社']
+        },
+        yAxis: {},
+        series: [
+          {
+            name: '出版社出书个数',
+            type: 'bar',
+            data: [2, 2, 1, 4, 1]
+          }
+        ]
+      };
+
+      // Display the chart using the configuration items and data just specified.
+      myChart.setOption(option);
+    </script>
+  </body>
+</html>
